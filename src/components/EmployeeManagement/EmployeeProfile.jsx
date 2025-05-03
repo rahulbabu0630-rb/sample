@@ -62,7 +62,7 @@ const EmployeeProfile = () => {
     try {
       setState(prev => ({ ...prev, loading: true, error: null }));
       
-      const response = await axios.get(`${API_BASE_URL}/api/employees/get`, {
+      const response = await axios.get(`${API_BASE_URL}/employees/get`, {
         params: { name },
         timeout: 5000
       });
@@ -156,7 +156,7 @@ const EmployeeProfile = () => {
   const deleteEmployee = async () => {
     if (window.confirm(`Permanently delete ${employee.name}?`)) {
       try {
-        await axios.delete(`${API_BASE_URL}/api/employees/delete/${employee.id}`);
+        await axios.delete(`${API_BASE_URL}/employees/delete/${employee.id}`);
         navigate('/employee-management', { 
           state: { toast: { message: `${employee.name} deleted successfully`, type: 'success' } } 
         });

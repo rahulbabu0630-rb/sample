@@ -49,7 +49,7 @@ const AttendanceSummary = () => {
   const fetchEmployees = useCallback(async () => {
     try {
       setLoading(prev => ({ ...prev, employees: true }));
-      const response = await axios.get(`${API_BASE_URL}/api/employees/all`);
+      const response = await axios.get(`${API_BASE_URL}/employees/all`);
       setEmployees(response.data);
       if (employeeId) {
         setSelectedEmployee(employeeId);
@@ -73,7 +73,7 @@ const AttendanceSummary = () => {
 
     setLoading(prev => ({ ...prev, salary: true }));
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/employees/getById/${empId}`);
+      const response = await axios.get(`${API_BASE_URL}/employees/getById/${empId}`);
       const salary = response.data?.salary || 0;
       setSummary(prev => ({
         ...prev,
@@ -107,7 +107,7 @@ const AttendanceSummary = () => {
         params.employeeId = selectedEmployee;
       }
 
-      const response = await axios.get(`${API_BASE_URL}/api/attendance/filter`, {
+      const response = await axios.get(`${API_BASE_URL}/attendance/filter`, {
         params,
         paramsSerializer: {
           indexes: null // Correctly handles array params if needed

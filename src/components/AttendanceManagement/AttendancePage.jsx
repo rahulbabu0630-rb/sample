@@ -77,7 +77,7 @@ const AttendancePage = () => {
       setError(null);
       
       // First try with proxy
-      const response = await fetch(`${API_BASE_URL}/api/employees/all`, {
+      const response = await fetch(`${API_BASE_URL}/employees/all`, {
         headers: {
           'Content-Type': 'application/json',
         },

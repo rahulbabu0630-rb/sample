@@ -131,7 +131,7 @@ const AddEmployee = () => {
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'https://durgadevisweets.onrender.com';
       
-      const response = await fetchWithTimeout(`${apiUrl}/api/employees/add`, {
+      const response = await fetchWithTimeout(`${apiUrl}/employees/add`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

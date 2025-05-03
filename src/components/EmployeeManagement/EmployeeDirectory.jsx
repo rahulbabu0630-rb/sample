@@ -46,7 +46,7 @@ const EmployeeDirectory = () => {
         throw new Error('Invalid date parameters');
       }
 
-      const response = await axios.get(`${API_BASE_URL}/api/attendance/filter`, {
+      const response = await axios.get(`${API_BASE_URL}/attendance/filter`, {
         params: { 
           employeeId,
           year: parseInt(year),
@@ -89,7 +89,7 @@ const EmployeeDirectory = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await axios.get(`${API_BASE_URL}/api/employees/all`);
+      const response = await axios.get(`${API_BASE_URL}/employees/all`);
       
       if (response.status !== 200) {
         throw new Error(`Server error: ${response.status}`);
@@ -141,7 +141,7 @@ const EmployeeDirectory = () => {
   const handleDelete = async (id) => {
     setIsProcessing(true);
     try {
-      const response = await axios.delete(`${API_BASE_URL}/api/employees/delete/${id}`, {
+      const response = await axios.delete(`${API_BASE_URL}/employees/delete/${id}`, {
         headers: {
           'Content-Type': 'application/json',
         },

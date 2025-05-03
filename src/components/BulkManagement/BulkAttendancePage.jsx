@@ -104,7 +104,7 @@ const BulkAttendancePage = () => {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/employees/all`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/employees/all`, {
           signal: controller.signal
         });
         
@@ -199,7 +199,7 @@ const BulkAttendancePage = () => {
           : emp
       ));
 
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/bulk-attendance/mark`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/bulk-attendance/mark`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
