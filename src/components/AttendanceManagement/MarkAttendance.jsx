@@ -138,7 +138,7 @@ const MarkAttendance = () => {
     const fetchEmployee = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${API_BASE_URL}/api/employees/getById/${id}`);
+        const response = await axios.get(`${API_BASE_URL}/employees/getById/${id}`);
         setEmployee(response.data);
       } catch (error) {
         console.error("Error fetching employee:", error);
@@ -157,7 +157,7 @@ const MarkAttendance = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/api/attendance/filter?employeeId=${id}&year=${selectedYear}&month=${selectedMonth}`
+        `${API_BASE_URL}/attendance/filter?employeeId=${id}&year=${selectedYear}&month=${selectedMonth}`
       );
       setAttendanceRecords(response.data);
       setError("");
@@ -208,12 +208,12 @@ const MarkAttendance = () => {
         );
 
         if (existingRecord) {
-          await axios.put(`${API_BASE_URL}/api/attendance/${existingRecord.id}`, {
+          await axios.put(`${API_BASE_URL}/attendance/${existingRecord.id}`, {
             status: newStatus,
             salary
           });
         } else {
-          await axios.post(`${API_BASE_URL}/api/attendance`, {
+          await axios.post(`${API_BASE_URL}/attendance`, {
             employeeId: id,
             date,
             status: newStatus,
