@@ -55,7 +55,8 @@ const EmployeeDashboard = () => {
   const fetchAttendanceData = async (date) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/employees/attendance-status`);
+      // Corrected endpoint URL (removed /employees prefix)
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/attendance-status`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -192,8 +193,6 @@ const EmployeeDashboard = () => {
     <div className="relative min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <ToastContainer />
       
-      {/* Navigation and header would go here */}
-
       <button 
         onClick={scrollToBottom}
         className="fixed top-20 left-6 z-50 p-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110"
@@ -201,7 +200,6 @@ const EmployeeDashboard = () => {
         <FaArrowDown />
       </button>
 
-      {/* Main content */}
       <div className="pt-24 max-w-6xl mx-auto py-8 px-6">
         <h1 className="text-3xl font-bold text-blue-900 text-center mb-6 uppercase tracking-wide">
           Employee Attendance Dashboard
