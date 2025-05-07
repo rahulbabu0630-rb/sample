@@ -6,7 +6,8 @@ import {
   FaArrowDown, 
   FaArrowLeft, 
   FaSpinner, 
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaChartLine 
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
@@ -246,6 +247,10 @@ const BulkAttendancePage = () => {
     navigate('/attendance');
   }, [navigate]);
 
+  const goToDashboard = useCallback(() => {
+    navigate('/dashboard');
+  }, [navigate]);
+
   const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
@@ -319,6 +324,14 @@ const BulkAttendancePage = () => {
 
             {/* Nav items - absolutely positioned right */}
             <div className="absolute right-4 flex items-center space-x-4">
+              <button 
+                onClick={goToDashboard}
+                className="flex items-center px-3 py-1 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300"
+                title="Employee Dashboard"
+              >
+                <FaChartLine className="mr-1" />
+                <span className="text-sm">Dashboard</span>
+              </button>
               <button 
                 onClick={handleLogoClick}
                 className="flex items-center px-3 py-1 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300"

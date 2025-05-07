@@ -9,6 +9,7 @@ import EmployeeDirectory from "./components/EmployeeManagement/EmployeeDirectory
 import AddEmployee from "./components/EmployeeManagement/AddEmployee";
 import EmployeeProfile from "./components/EmployeeManagement/EmployeeProfile";
 import BulkAttendancePage from "./components/BulkManagement/BulkAttendancePage";
+import EmployeeDashboard from "./components/EmployeeManagement/EmployeeDashboard";
 import ContactUs from "./components/ContactUs";
 
 const AppContent = () => {
@@ -26,6 +27,7 @@ const AppContent = () => {
         <Route path="/attendance-summary" element={<AttendanceSummary />} />
         <Route path="/attendance-summary/:employeeId" element={<AttendanceSummary />} />
         <Route path="/employee-management" element={<EmployeeDirectory />} />
+        <Route path="/dashboard" element={<EmployeeDashboard />} />
         <Route path="/add-employee" element={<AddEmployee />} />
         <Route path="/employee-profile/:name" element={<EmployeeProfile />} />
         <Route path="/bulk-attendance" element={<BulkAttendancePage />} />
