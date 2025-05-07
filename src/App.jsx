@@ -10,7 +10,6 @@ import AddEmployee from "./components/EmployeeManagement/AddEmployee";
 import EmployeeProfile from "./components/EmployeeManagement/EmployeeProfile";
 import BulkAttendancePage from "./components/BulkManagement/BulkAttendancePage";
 import ContactUs from "./components/ContactUs";
-import EmployeeDashboard from "./components/EmployeeManagement/EmployeeDashboard";
 
 const AppContent = () => {
   const location = useLocation();
@@ -26,7 +25,6 @@ const AppContent = () => {
         <Route path="/mark-attendance/:id" element={<MarkAttendance />} />
         <Route path="/attendance-summary" element={<AttendanceSummary />} />
         <Route path="/attendance-summary/:employeeId" element={<AttendanceSummary />} />
-        <Route path="/dashboard" element={<EmployeeDashboard />} />
         <Route path="/employee-management" element={<EmployeeDirectory />} />
         <Route path="/add-employee" element={<AddEmployee />} />
         <Route path="/employee-profile/:name" element={<EmployeeProfile />} />
